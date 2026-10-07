@@ -1,0 +1,2203 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive scaling for mobile, tablet and desktop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>S. Sujan | AI & Data Science Engineer</title>
+
+    <meta name="description"
+        content="Portfolio of S. Sujan, B.Tech Artificial Intelligence & Data Science student focused on Java, Data, AI and Cloud.">
+
+    <style>
+        /* =========================================================
+           ROOT VARIABLES
+        ========================================================= */
+
+        :root {
+            --bg: #07090d;
+            --bg-soft: #0a0d12;
+            --surface: #0d1118;
+            --surface-2: #111722;
+
+            --text: #f4f7fb;
+            --text-soft: #c4ccd7;
+            --muted: #8e99aa;
+
+            --line: #1d2633;
+            --line-hover: #344255;
+
+            --accent: #ecc09c;
+            --accent-blue: #7ca7ff;
+
+            --max-width: 1180px;
+
+            --radius-small: 10px;
+            --radius-medium: 15px;
+            --radius-large: 20px;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        .container {
+            width: min(100% - 48px, var(--max-width));
+            margin: auto;
+        }
+
+        .root {
+            min-height: 100vh;
+            background: var(--bg);
+        }
+
+        section {
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.055);
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+            margin-bottom: 45px;
+        }
+
+        .kicker {
+            color: var(--accent);
+            font-family: monospace;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .section-title {
+            margin-top: 8px;
+            font-size: clamp(30px, 4vw, 42px);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        }
+
+        .section-description {
+            max-width: 500px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(7, 9, 13, 0.84);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-inner {
+            width: min(100% - 48px, var(--max-width));
+            height: 72px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .nav-links a {
+            position: relative;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 1px;
+
+            background: var(--accent);
+
+            transition: width 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-button {
+            display: none;
+
+            border: 1px solid var(--line);
+            background: transparent;
+            color: var(--text);
+
+            padding: 8px 12px;
+            border-radius: 9px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: calc(100vh - 72px);
+
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+
+            gap: 70px;
+            align-items: center;
+
+            padding: 80px 0 90px;
+
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            right: -160px;
+            top: 50px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(124, 247, 197, 0.12),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--accent);
+
+            font-family: monospace;
+            font-size: 12px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 25px;
+            height: 1px;
+
+            background: var(--accent);
+        }
+
+        .hero h1 {
+            max-width: 800px;
+
+            margin: 20px 0 24px;
+
+            font-size: clamp(48px, 7vw, 86px);
+            line-height: 0.98;
+
+            letter-spacing: -0.065em;
+        }
+
+        .hero h1 span {
+            color: var(--muted);
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: #aeb7c5;
+
+            font-size: 18px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            margin-top: 32px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 12px 17px;
+
+            border: 1px solid var(--line);
+            border-radius: 10px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            border-color: var(--line-hover);
+        }
+
+        .button-primary {
+            background: var(--text);
+            color: #080a0e;
+            border-color: var(--text);
+        }
+
+        .button-primary:hover {
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.08);
+        }
+
+
+        /* =========================================================
+           PROFILE / PHOTO
+        ========================================================= */
+
+        .profile {
+            width: min(100%, 360px);
+            justify-self: end;
+        }
+
+        .profile-photo {
+            aspect-ratio: 4 / 5;
+
+            position: relative;
+
+            display: grid;
+            place-items: center;
+
+            overflow: hidden;
+
+            border: 1px solid var(--line);
+            border-radius: 70px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111a25,
+                    #090c12
+                );
+
+            box-shadow:
+                0 30px 90px rgba(0, 0, 0, 0.35);
+        }
+
+        .initials {
+            font-size: 92px;
+            font-weight: 900;
+            letter-spacing: -0.09em;
+            color: #dfe8e5;
+        }
+
+        .photo-note {
+            position: absolute;
+
+            bottom: 18px;
+            left: 18px;
+            right: 18px;
+
+            padding: 11px 13px;
+
+            background: rgba(7, 9, 13, 0.75);
+
+            border: 1px solid var(--line);
+            border-radius: 12px;
+
+            color: var(--muted);
+
+            font-family: monospace;
+            font-size: 10px;
+
+            z-index: 2;
+        }
+
+
+        /* =========================================================
+           QUICK STATS
+        ========================================================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 1px;
+
+            margin-top: 18px;
+
+            overflow: hidden;
+
+            background: var(--line);
+            border: 1px solid var(--line);
+            border-radius: 15px;
+        }
+
+        .stat {
+            padding: 14px;
+            background: var(--surface);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 18px;
+        }
+
+        .stat small {
+            color: var(--muted);
+            font-size: 9px;
+            font-family: monospace;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 70px;
+        }
+
+        .about-text {
+            color: var(--text-soft);
+            font-size: 18px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-text strong {
+            color: var(--text);
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 12px;
+        }
+
+        .fact {
+            padding: 20px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--line);
+            border-radius: 14px;
+        }
+
+        .fact small {
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+            font-family: monospace;
+        }
+
+        .fact strong {
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .project {
+            min-height: 290px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 25px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--line);
+            border-radius: 18px;
+
+            transition: 0.25s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: var(--line-hover);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.20);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+
+            color: var(--muted);
+            font-family: monospace;
+            font-size: 11px;
+        }
+
+        .project h3 {
+            margin: 28px 0 10px;
+
+            font-size: 22px;
+            line-height: 1.2;
+
+            letter-spacing: -0.03em;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+
+            margin-top: 22px;
+        }
+
+        .tag {
+            padding: 5px 8px;
+
+            border: 1px solid #273141;
+            border-radius: 999px;
+
+            color: #b9c4d4;
+
+            font-family: monospace;
+            font-size: 10px;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: var(--accent);
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           EDUCATION TIMELINE
+        ========================================================= */
+
+        .timeline {
+            position: relative;
+
+            margin-left: 10px;
+
+            border-left: 1px solid var(--line);
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding: 0 0 40px 35px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: -5px;
+            top: 5px;
+
+            width: 9px;
+            height: 9px;
+
+            background: var(--accent);
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 5px var(--bg);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+
+            font-family: monospace;
+            font-size: 11px;
+        }
+
+        .timeline-item h3 {
+            margin: 6px 0 4px;
+
+            font-size: 18px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 20px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--line);
+            border-radius: 14px;
+
+            transition: 0.2s ease;
+        }
+
+        .skill:hover {
+            border-color: var(--line-hover);
+            transform: translateY(-3px);
+        }
+
+        .skill h4 {
+            margin-bottom: 12px;
+
+            font-size: 13px;
+        }
+
+        .skill-list {
+            color: var(--muted);
+
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+        }
+
+        .contact h2 {
+            margin: 10px 0 18px;
+
+            font-size: clamp(40px, 5vw, 58px);
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+        }
+
+        .contact-description {
+            max-width: 480px;
+
+            color: var(--muted);
+        }
+
+        .contact-links {
+            display: grid;
+            gap: 10px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 17px 18px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--line);
+            border-radius: 13px;
+
+            font-size: 13px;
+
+            transition: 0.2s ease;
+        }
+
+        .contact-link:hover {
+            border-color: var(--line-hover);
+            transform: translateX(4px);
+        }
+
+        .contact-link span {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .contact-link strong {
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 30px 0 45px;
+
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #5f6a79;
+
+            border-top: 1px solid var(--line);
+
+            font-family: monospace;
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           SCROLL REVEAL ANIMATION
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE — TABLET
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .hero {
+                gap: 45px;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: clamp(44px, 7vw, 76px);
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE — MOBILE NAVIGATION
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .container {
+                width: min(100% - 34px, var(--max-width));
+            }
+
+            .nav-inner {
+                width: min(100% - 34px, var(--max-width));
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 72px;
+                left: 0;
+                right: 0;
+
+                padding: 20px;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                background: rgba(7, 9, 13, 0.97);
+
+                border-bottom: 1px solid var(--line);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                padding-top: 60px;
+            }
+
+            .profile {
+                justify-self: start;
+
+                width: min(100%, 310px);
+            }
+
+            .about-grid,
+            .contact{
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .section-head {
+                display: block;
+            }
+
+            .section-description {
+                margin-top: 14px;
+            }
+
+            .contact h2 {
+                font-size: clamp(38px, 8vw, 55px);
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE — SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 520px) {
+
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .nav-inner {
+                width: calc(100% - 28px);
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero {
+                min-height: auto;
+
+                padding:
+                    50px 0
+                    70px;
+            }
+
+            .hero h1 {
+                font-size: clamp(42px, 12vw, 54px);
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button {
+                justify-content: center;
+            }
+
+            .facts {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                padding: 20px;
+            }
+
+            footer {
+                display: block;
+            }
+
+            footer span {
+                display: block;
+
+                margin-top: 8px;
+            }
+        }
+
+
+        /* =========================================================
+           ACCESSIBILITY — REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .button,
+            .project,
+            .skill,
+            .contact-link {
+                transition: none;
+            }
+        }
+
+
+        /* =========================================================
+           PRINT / SAVE AS PDF
+        ========================================================= */
+
+        @media print {
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .navbar,
+            .hero-actions,
+            .menu-button,
+            .contact-links,
+            footer {
+                display: none !important;
+            }
+
+            section {
+                border: none;
+                padding: 25px 0;
+            }
+
+            .project,
+            .skill,
+            .fact{
+                background: white;
+                color: black;
+                border: 1px solid #ddd;
+            }
+
+            .muted,
+            .project p,
+            .skill-list,
+            .section-description {
+                color: #444;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="root">
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-inner">
+
+            <a href="#home" class="logo">
+                S<span>.</span>SUJAN<span></span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#about">About</a>
+
+                <a href="#projects">Work</a>
+
+                <a href="#education">Education</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="SUJAN_Resume.pdf" target="_blank">Resume</a>
+
+                <a href="#contact">Contact</a>
+
+            </nav>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button">
+
+                Menu
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section
+            class="hero container"
+            id="home"
+            style="border-top: none;">
+
+            <div class="reveal">
+
+                <div class="eyebrow">
+                    AI & Data Science Engineer
+                </div>
+
+                <h1>
+                    I build useful things with
+                    <span>code, data & AI.</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Aspiring Software Engineer skilled in Java, DSA, Data Analytics, Cloud, and AI. Passionate about building clean, scalable solutions and solving real-world problems through technology.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#projects"
+                        class="button button-primary">
+
+                        View Selected Work ↗
+
+                    </a>
+
+                    <a
+                        href="SUJAN_Resume.pdf"
+                        target="_blank"
+                        class="button">
+
+                        Resume / CV ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile reveal">
+
+                <div class="profile-photo">
+
+                    <img
+                            src="pic.jpg"
+                            alt="S. Sujan"
+                            style="width:100%;height:100%;object-fit:cover;"
+                    >
+
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat">
+
+                        <strong>B.TECH</strong>
+
+                        <small>
+                            AI&DS
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>Java</strong>
+
+                        <small>
+                            CORE LANGUAGE
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>2028</strong>
+
+                        <small>
+                            GRADUATION
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            01 / About
+                        </div>
+
+                        <h2 class="section-title">
+                            Engineer in progress.<br>
+                            Builder by habit.
+                        </h2>
+
+                    </div>
+
+                    <p class="section-description">
+
+                        A concise professional profile designed
+                        to tell recruiters what I can build,
+                        what I am learning and where I am heading.
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+
+                    <div class="about-text reveal">
+
+                        <p>
+                            I'm <strong>S. Sujan</strong>,
+                            a B.Tech Artificial Intelligence &
+                            Data Science student at VSB College in
+                            Coimbatore.
+                        </p>
+
+                        <p>
+                            My current focus is building strong
+                            software fundamentals while connecting
+                            them with data and AI.
+                        </p>
+
+                        <p>
+                            I enjoy turning a vague problem into
+                            a clear workflow — then implementing it
+                            using Java, SQL, Python, dashboards,
+                            APIs and cloud services.
+                        </p>
+
+                    </div>
+
+
+                    <div class="facts reveal">
+
+
+                        <div class="fact">
+
+                            <small>
+                                CAREER DIRECTION
+                            </small>
+
+                            <strong>
+                                Software Developer/ Data Analyst / AI Engineer / Devops Engineer / Java Developer
+                            </strong>
+
+                        </div>
+
+
+                        <div class="fact">
+
+                            <small>
+                                LOCATION
+                            </small>
+
+                            <strong>
+                                Coimbatore, Tamil Nadu
+                            </strong>
+
+                        </div>
+
+
+                        <div class="fact">
+
+                            <small>
+                                CORE
+                            </small>
+
+                            <strong>
+                                Java · DSA · MySQL · Python
+                            </strong>
+
+                        </div>
+
+
+                        <div class="fact">
+
+                            <small>
+                                INTERESTS
+                            </small>
+
+                            <strong>
+                                Web Application · Cloud · RAG · Analytics · AI Agents · OOPS
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROJECTS
+        ====================================================== -->
+
+        <section id="projects">
+
+            <div class="container">
+
+
+                <div class="section-head reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            02 / Selected Work
+                        </div>
+
+                        <h2 class="section-title">
+                            Projects with a reason to exist.
+                        </h2>
+
+                    </div>
+
+                    <p class="section-description">
+
+                        Each project is presented as a problem,
+                        solution and technology story — not simply
+                        as a list of buzzwords.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="projects">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project reveal">
+
+                        <div>
+
+                            <div class="project-top">
+
+                                <span>
+                                    01 / DATA ANALYSIS AND VISUALIZATION
+                                </span>
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Supply Chain Delivery Risk Dashboard
+                            </h3>
+
+
+                            <p>
+
+                                Interactive Power BI analysis of
+                                delivery performance, late-risk
+                                patterns, profitability and
+                                operational segments.
+
+                            </p>
+
+
+                            <div class="tags">
+
+                                <span class="tag">
+                                    Power BI
+                                </span>
+
+                                <span class="tag">
+                                    DAX
+                                </span>
+
+                                <span class="tag">
+                                    Power Query
+                                </span>
+
+                                <span class="tag">
+                                    Data Analysis
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/sujansivakumaran/Supply-Chain-Delivery-Risk-Analysis"
+                            class="project-link">
+
+                            GITHUB →
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="project reveal">
+
+                        <div>
+
+                            <div class="project-top">
+
+                                <span>
+                                    02 / BERT
+                                </span>
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Mediscan-AI
+                            </h3>
+
+
+                            <p>
+
+                                NLP-powered medical report analysis system that uses BERT and Flask to extract and interpret clinical information and deliver structured results.
+
+                            </p>
+
+
+                            <div class="tags">
+
+                                <span class="tag">
+                                    Python
+                                </span>
+
+                                <span class="tag">
+                                    NLP
+                                </span>
+
+                                <span class="tag">
+                                    HTML/CSS
+                                </span>
+
+                                <span class="tag">
+                                    Flask
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/sujansivakumaran/Mediscan-AI"
+                            class="project-link">
+
+                            GITHUB →
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="project reveal">
+
+                        <div>
+
+                            <div class="project-top">
+
+                                <span>
+                                    03 / MACHINE LEARNING
+                                </span>
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Loan Eligibility Prediction
+                            </h3>
+
+
+                            <p>
+
+                                Machine learning application that analyzes applicant and financial data to predict loan eligibility through preprocessing, model training, and classification.
+
+                            </p>
+
+
+                            <div class="tags">
+
+                                <span class="tag">
+                                    Python
+                                </span>
+
+                                <span class="tag">
+                                    Embeddings
+                                </span>
+
+                                <span class="tag">
+                                    Scikit-learn
+                                </span>
+
+                                <span class="tag">
+                                    Pandas
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/sujansivakumaran/Loan_eligibility_prediction"
+                            class="project-link">
+
+                            GITHUB →
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 4 -->
+
+                    <article class="project reveal">
+
+                        <div>
+
+                            <div class="project-top">
+
+                                <span>
+                                    04 / Programming knowledge
+                                </span>
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Java + DSA Problem Solving
+                            </h3>
+
+
+                            <p>
+
+                                Consistent algorithm practice
+                                covering arrays, strings, hashing,
+                                linked lists, sliding window and
+                                problem decomposition.
+
+                            </p>
+
+
+                            <div class="tags">
+
+                                <span class="tag">
+                                    Java
+                                </span>
+
+                                <span class="tag">
+                                    DSA
+                                </span>
+
+                                <span class="tag">
+                                    Mysql
+                                </span>
+
+                                <span class="tag">
+                                    Problem Solving
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="https://leetcode.com/u/Sujan496"
+                            class="project-link">
+
+                            CODING PROFILE →
+
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EDUCATION
+        ====================================================== -->
+
+        <section id="education">
+
+            <div class="container">
+
+
+                <div class="section-head reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            03 / Education
+                        </div>
+
+                        <h2 class="section-title">
+                            Learning with intent.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item reveal">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            2024 — 2028
+                        </div>
+
+                        <h3>
+                            B.Tech — Artificial Intelligence
+                            & Data Science
+                        </h3>
+
+                        <p>
+                            V.S.B College of Engineering
+                            Technical Campus · Coimbatore
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item reveal">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            NOW / CONTINUOUS
+                        </div>
+
+                        <h3>
+                            Engineering Practice
+                        </h3>
+
+                        <p>
+                            Java & DSA · Python foundations
+                            for AI · SQL · Power BI · AWS
+                            fundamentals · RAG concepts
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
+
+        <section id="skills">
+
+            <div class="container">
+
+
+                <div class="section-head reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            04 / Toolkit
+                        </div>
+
+                        <h2 class="section-title">
+                            Tools I use to build.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-description">
+
+                        Grouped by engineering purpose so the
+                        stack reads like a working toolkit rather
+                        than keyword stuffing.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="skills">
+
+
+                    <div class="skill reveal">
+
+                        <h4>
+                            Programming
+                        </h4>
+
+                        <div class="skill-list">
+
+                            Java<br>
+
+                            Python<br>
+
+                            MySQL<br>
+
+                            HTML / CSS
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="skill reveal">
+
+                        <h4>
+                            Engineering
+                        </h4>
+
+                        <div class="skill-list">
+
+                            Data Structures & Algorithms<br>
+
+                            OOP<br>
+
+                            AWS Fundamentals<br>
+
+                            Flask
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="skill reveal">
+
+                        <h4>
+                            Data & AI
+                        </h4>
+
+                        <div class="skill-list">
+
+                            Power BI<br>
+
+                            Power Query / DAX<br>
+
+                            Pandas<br>
+
+                            Numpy
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="skill reveal">
+
+                        <h4>
+                            Tools
+                        </h4>
+
+                        <div class="skill-list">
+
+                            Git / GitHub<br>
+
+                            MySQL shell<br>
+
+                            Jupyter Notebook<br>
+
+                            VS Code / Eclipse
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+
+                <div class="contact">
+
+
+                    <div class="reveal">
+
+                        <div class="kicker">
+                            05 / Contact
+                        </div>
+
+                        <h2>
+                            Let's build something
+                            worth showing.
+                        </h2>
+
+                        <p class="contact-description">
+
+                            I'm open to connecting with
+                            recruiters, developers, mentors
+                            and people working on interesting
+                            technology.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="contact-links reveal">
+
+
+                        <!-- EMAIL -->
+
+                        <a
+                            class="contact-link"
+                            href="mailto:sivasujan120@gmail.com">
+
+                            <div>
+
+                                Email<br>
+
+                                <strong>
+                                    sivasujan120@gmail.com
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+
+                        <!-- LINKEDIN -->
+
+                        <a
+                            class="contact-link"
+                            href="https://www.linkedin.com/in/sujan-sivakumaran-29a15b331/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <div>
+
+                                LinkedIn<br>
+
+                                <strong>
+                                    linkedin.com/in/SUJAN SIVAKUMARAN
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+
+                        <!-- GITHUB -->
+
+                        <a
+                            class="contact-link"
+                            href="https://github.com/sujansivakumaran"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <div>
+
+                                GitHub<br>
+
+                                <strong>
+                                    github.com/sujansivakumaran
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+
+                        <!-- LEETCODE -->
+
+                        <a
+                            class="contact-link"
+                            href="https://leetcode.com/Sujan496"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <div>
+
+                                LeetCode<br>
+
+                                <strong>
+                                    leetcode.com/Sujan496
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+
+                        <!-- HACKERRANK -->
+
+                        <a
+                            class="contact-link"
+                            href="https://www.hackerrank.com/profile/sivasujan120"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <div>
+
+                                HackerRank<br>
+
+                                <strong>
+                                    hackerrank.com/_sujan_6
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+
+                        <!-- MOBILE -->
+
+                        <a
+                            class="contact-link"
+                            href="tel:+91XXXXXXXXXX">
+
+                            <div>
+
+                                Mobile<br>
+
+                                <strong>
+                                    +91 8754710428
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+
+                        <!-- WHATSAPP -->
+
+                        <a
+                            class="contact-link"
+                            href="https://wa.me/+918754710428"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <div>
+
+                                WhatsApp<br>
+
+                                <strong>
+                                    Chat on WhatsApp
+                                </strong>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer class="container">
+
+        <span>
+            © <span id="year"></span>
+            S. Sujan · Built with intent.
+        </span>
+
+        <span>
+            Java · Data · AI · Cloud
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+<!-- =============================================================
+     JAVASCRIPT
+     Everything is inside this same index.html
+============================================================= -->
+
+<script>
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuButton.addEventListener("click", function () {
+
+        navLinks.classList.toggle("open");
+
+    });
+
+
+    /* Close mobile menu after clicking a link */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("open");
+
+            });
+
+        });
+
+
+
+    /* =========================================================
+       SCROLL REVEAL ANIMATION
+    ========================================================= */
+
+    const observer =
+        new IntersectionObserver(
+
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.08
+            }
+
+        );
+
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach(function (element) {
+
+            observer.observe(element);
+
+        });
+
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+
+    /* =========================================================
+       CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+    ========================================================= */
+
+    document.addEventListener("click", function (event) {
+
+        const clickedInsideMenu =
+            navLinks.contains(event.target);
+
+        const clickedButton =
+            menuButton.contains(event.target);
+
+
+        if (
+            !clickedInsideMenu &&
+            !clickedButton
+        ) {
+
+            navLinks.classList.remove("open");
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
